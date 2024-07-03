@@ -40,7 +40,7 @@ function saveElement(value) {
   data.push(todo);
   localStorage.setItem("todos", JSON.stringify(data));
 
-  const item = createItem(todo.value, todo.id);
+  const item = createItem(todo.name, todo.id);
   wrapper.innerHTML += item;
 }
 
@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
 
           localStorage.setItem("todos", JSON.stringify(copied));
+          window.location.reload();
         }
       });
     });
